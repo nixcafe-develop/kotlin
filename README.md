@@ -1,6 +1,6 @@
 # Nix Flake · Kotlin Dev Template
 
-> purr · git-hooks · kotlin · jvm · gradle · graalvm · reproducible · nix-flake
+> purr · git-hooks · kotlin · gradle · graalvm · nix-flake
 
 Nix flake template for Kotlin/JVM development — reproducible dev shell with GraalVM JDK, Kotlin compiler, Gradle, and git pre-commit hooks. Built on [purr](https://flakehub.com/f/nixcafe/purr) and [git-hooks.nix](https://flakehub.com/f/cachix/git-hooks.nix).
 
