@@ -1,23 +1,23 @@
 {
   inputs,
   pkgs,
-  mkShell,
   system,
   ...
 }:
 let
-  jdk = pkgs.graalvmPackages.graalvm-ce; # pkgs.jdk23;
+  jdk = pkgs.graalvmPackages.graalvm-ce;
   kotlin = pkgs.kotlin.override { jre = jdk; };
   gradle = pkgs.gradle.override { java = jdk; };
 in
-mkShell {
+pkgs.mkShell {
   packages = [
     jdk
     kotlin
     gradle
-    # ant
   ];
 
-  inherit (inputs.self.checks.${system}.pre-commit-check) shellHook;
-  buildInputs = inputs.self.checks.${system}.pre-commit-check.enabledPackages;
+  shellHook = ''
+    ${inputs.self.checks.${system}.git-hooks.shellHook}
+  '';
+  buildInputs = inputs.self.checks.${system}.git-hooks.enabledPackages;
 }
