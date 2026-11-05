@@ -25,7 +25,7 @@ nix flake init -t beans#kotlin
 ### Create from Template
 
 ```bash
-gh repo create my-kotlin-project --template nixcafe/kotlin --clone
+gh repo create my-kotlin-project --template nixcafe-develop/kotlin --clone
 ```
 
 ### Enter the Dev Shell
